@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title> Calculate the power</title>
+    <style type="text/css">
+    body {
+       background-color: rgb(116, 92, 221);
+       align-items: center;
+    }
+
+    h1 {
+       color: rgb(255, 251, 0);
+       padding-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1 align="center">calculating power of a lamp</h1>
+    <form action="{% url 'home' %}" method="post" align="center">
+        {% csrf_token %}
+        Intensity:
+        <input type="number" name="intensity-input"><br>
+        Resistance:
+        <input type="number" name="resistance-input"><br>
+        <button type="submit" style="background-color: green; color: white;">Calculate</button>
+        <p align="center">The power of the lamp is: {{ output }}</p>
+    </form>
+</body>
+</html>
